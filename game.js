@@ -16,6 +16,16 @@ const startPosition = Cesium.Cartesian3.fromDegrees(100.5018, 13.7563, 10);
 
 const car = new Car(viewer, startPosition);
 
+viewer.camera.flyTo({
+    destination: startPosition,
+    orientation: {
+        heading: 0,
+        pitch: Cesium.Math.toRadians(-30),
+        roll: 0
+    }
+});
+
+
 let keys = {};
 window.addEventListener("keydown", e => keys[e.key.toLowerCase()] = true);
 window.addEventListener("keyup", e => keys[e.key.toLowerCase()] = false);
